@@ -20,11 +20,11 @@
                 };
             },
             methods: {
-                increment(){
+                submit(){
                    this.counter++;
                 }
             },
-           template: `<button v-on:keyup="increment">{{counter}}</button>`
+           template: `<form v-on:submit.prevent="submit"><button >{{counter}}</button></form>`
         }).mount("#app");
 
         
