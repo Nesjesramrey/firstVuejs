@@ -16,16 +16,18 @@
        const vm = Vue.createApp({
             data(){
                 return {
-                    attr: "src",
-                   img: "https://i.picsum.photos/id/1/5616/3744.jpg?hmac=kKHwwU8s46oNettHKwJ24qOlIAsWN9d2TtsXDoCWWsQ" 
+                    counter: 0
+                };
+            },
+            methods: {
+                increment(){
+                   this.counter++;
                 }
             },
-            //template: `<img v-bind:src="img" v-bind:alt="img" />` 
-            //template: `<img v-bind:["src"]="img" v-bind:alt="img" />`
-            template: `<img v-bind:[attr]="img" v-bind:alt="img" />` // aqui podemos agregarlo con un atributo
+           template: `<button v-on:click="increment">{{counter}}</button>`
         }).mount("#app");
 
-        console.log(vm);
+        
     </script>
 </body>
 </html>
