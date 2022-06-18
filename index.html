@@ -19,14 +19,11 @@
                     text: "Hola vue"
                 };
             },
-           methods:{
-            input(e){
-                this.text = e.target.value;
-            }
-           },
            template: ` <p>{{ text }}</p>
-           <input type ="text" @input="input" :value="text"/>
+           <input type ="text" v-model="text"/>
            `
+
+           //v-model sustituye el v-on y v-bind
         }).mount("#app");
 
         
