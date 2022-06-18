@@ -13,25 +13,15 @@
       const vm = Vue.createApp({
         data() {
           return {
-            firstName: "Nestor",
-            lastName: "Ramirez",
-            now: new Date(),
+            text: "Hola Vue",
           };
         },
-        //methods logica de eventos
-        //computed logica de data en general
-        computed: {
-          fullName() {
-            return this.firstName + " " + this.lastName;
-          },
-          today() {
-            return this.now.toLocaleDateString();
+        watch: {
+          text(value, old) {
+            console.log("watcher", value, old);
           },
         },
-        template: ` <div>{{fullName}} </div>
-        <div> {{  today  }}</div>
-
-
+        template: ` {{ text }}
            `,
       }).mount("#app");
     </script>
