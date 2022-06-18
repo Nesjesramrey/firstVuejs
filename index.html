@@ -20,11 +20,17 @@
                 };
             },
             methods: {
-                submit(){
+                increase(){
                    this.counter++;
+                },
+                decrease(){
+                   this.counter--;
                 }
             },
-           template: `<form v-on:submit.prevent="submit"><button >{{counter}}</button></form>`
+           template: `
+           <div>{{counter}}
+            <button v-on:click="increase">+</button>
+           <button v-on:click="decrease">-</button>`
         }).mount("#app");
 
         
